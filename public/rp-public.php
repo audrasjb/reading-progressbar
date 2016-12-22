@@ -27,4 +27,7 @@
 		wp_enqueue_script( 'asagenda-public', plugin_dir_url( __FILE__ ) . 'js/rp-public.js', array( 'jquery' ), '', false );
 	}
 
-
+	add_action( 'wp_footer', 'rp_show_it', 100 );
+	function rp_show_it() {
+	    echo '<progress class="readingProgressbar" data-color="#bada55" data-height="50" value="0"></progress>';
+	}

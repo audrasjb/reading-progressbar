@@ -31,10 +31,10 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Admin
  */
-require_once plugin_dir_path( dirname( __FILE__ ) ) . '/' .$plugin_name . '/admin/rp-admin.php';
-
+if (is_admin()) {
+ require_once plugin_dir_path( dirname( __FILE__ ) ) . '/reading-progressbar/admin/rp-admin.php';
+}
 /**
  * Public
  */
-//require_once plugin_dir_path( dirname( __FILE__ ) ) . '/' .$plugin_name . '/public/asagenda-public.php';
-}
+require_once plugin_dir_path( dirname( __FILE__ ) ) . '/reading-progressbar/public/rp-public.php';

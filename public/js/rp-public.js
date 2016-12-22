@@ -1,27 +1,36 @@
 (function( $ ) {
 	'use strict';
+	
+	// Il faut que le DOM soit déjà opé
+	$(function() { 
+		
+		// Calcul de la valeur max de la progressbar
+		var winHeight = $(window).height(),
+		docHeight = $(document).height();
+		var max = docHeight - winHeight;
+		$('.readingProgressbar').attr('max', max);
+		
+		// Styles
+		var progressColor = $('.readingProgressbar').attr('data-color');
+		var progressHeight = $('.readingProgressbar').attr('data-height');
 
-	$(window).load( function() {
+		$('.readingProgressbar').css({
+			'color' :  progressColor,
+			'height' :  progressHeight
+		});
+		$('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressColor + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressColor + ' } </style>')
+		.appendTo('head');
+
+		// Valeur initiale (si on arrive via une ancre ou autre…)
+		var value = $(window).scrollTop();
+		$('.readingProgressbar').attr('value', value);
+
+		// Calcul et maj dynamique de la valeur lors du scroll
+		$(document).on('scroll', function() {
+			value = $(window).scrollTop();
+			$('.readingProgressbar').attr('value', value);
+		});
 		
-		// Show widget
-		if ( $('#asagenda-widget-calendar-container').length > 0 ) {
-			$('#asagenda-widget-calendar-container').monthly({
-				mode: 'event',
-				dataType: 'json',
-				events: asagendaJsonEvents,
-				weekStart: 'Mon',
-			});
-		}
-		
-		// Show shortcode
-		if ( $('#asagenda-shortcode-calendarview-container').length > 0 ) {
-			$('#asagenda-shortcode-calendarview-container').monthly({
-				mode: 'event',
-				dataType: 'json',
-				events: asagendaJsonEvents,
-				weekStart: 'Mon',
-			});
-		}
 	});
 
 })( jQuery );
