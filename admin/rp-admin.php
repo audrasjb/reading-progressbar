@@ -170,7 +170,7 @@ function rp_field_templates_render( ) {
 	}
 	?>
 	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'home' ); ?> value='home' /> <?php echo __('Home / front-page', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'blog' ); ?> value='blog' /> <?php echo __('Blog page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'blog' ); ?> value='blog' /> <?php echo __('Blog page (if used)', 'progressbar' ); ?></p>
 	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'archive' ); ?> value='archive' /> <?php echo __('Archive / category page for posts or custom post types', 'progressbar' ); ?></p>
 	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'single' ); ?> value='single' /> <?php echo __('Single post / page / custom post type', 'progressbar' ); ?></p>
 	<?php
