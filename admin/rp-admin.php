@@ -89,69 +89,121 @@ function rp_settings_init(  ) {
 		'rp_pluginPage_section' 
 	);
 
-/*
 	add_settings_field( 
-		'rp_field_location', 
-		__( 'On which post types or templates?', 'progressbar' ), 
-		'rp_field_location_render', 
+		'rp_field_templates', 
+		__( 'Select templates', 'progressbar' ), 
+		'rp_field_templates_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
 	);
-*/
+
+	add_settings_field( 
+		'rp_field_posttypes', 
+		__( 'Select post types', 'progressbar' ), 
+		'rp_field_posttypes_render', 
+		'pluginPage', 
+		'rp_pluginPage_section' 
+	);
 }
 
 
 function rp_field_height_render(  ) { 
 	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_height'])) {
+		$optionHeight = $options['rp_field_height'];
+	} else {
+		$optionHeight = '';		
+	}
 	?>
-	<input type='number' name='rp_settings[rp_field_height]' value='<?php if ($options['rp_field_height']) : echo $options['rp_field_height']; endif; ?>'>
+	<input type='number' name='rp_settings[rp_field_height]' value='<?php echo $optionHeight; ?>'>
 	<?php
 }
 
 
 function rp_field_color_render(  ) { 
 	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_color'])) {
+		$optionColor = $options['rp_field_color'];
+	} else {
+		$optionColor = '';		
+	}
 	?>
-	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_color]' value='<?php if ($options['rp_field_color']) : echo $options['rp_field_color']; endif; ?>'>
+	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_color]' value='<?php echo $optionColor; ?>'>
 	<?php
 }
 
 
 function rp_field_position_render(  ) { 
 	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_position'])) {
+		$optionPosition = $options['rp_field_position'];
+	} else {
+		$optionPosition = '';		
+	}
 	?>
 	<select name='rp_settings[rp_field_position]'>
-		<option value='top' <?php selected( $options['rp_field_position'], 'top' ); ?>>Top</option>
-		<option value='bottom' <?php selected( $options['rp_field_position'], 'bottom' ); ?>>Bottom</option>
-		<option value='custom' <?php selected( $options['rp_field_position'], 'custom' ); ?>>Custom</option>
+		<option value='top' <?php selected( $optionPosition, 'top' ); ?>>Top</option>
+		<option value='bottom' <?php selected( $optionPosition, 'bottom' ); ?>>Bottom</option>
+		<option value='custom' <?php selected( $optionPosition, 'custom' ); ?>>Custom</option>
 	</select>
 <?php
 }
 
 function rp_field_custom_position_render(  ) { 
 	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_custom_position'])) {
+		$optionCustomPosition = $options['rp_field_custom_position'];
+	} else {
+		$optionCustomPosition = '';		
+	}
 	?>
-	<input type='text' name='rp_settings[rp_field_custom_position]' value='<?php if ($options['rp_field_custom_position']) : echo $options['rp_field_custom_position']; endif; ?>'>
+	<input type='text' name='rp_settings[rp_field_custom_position]' value='<?php echo $optionCustomPosition; ?>'>
 	<?php
 }
 
-/*
-function rp_field_location_render( ) {
+function rp_field_templates_render( ) {
 	$options = get_option( 'rp_settings' );
-	?>
-	<select name='rp_settings[rp_field_location]'>
-	<?php
-	$post_types = get_post_types( array( 'public' => true ), 'objects' );
-	foreach ( $post_types as $type => $obj ) {
-		?>
-		<option value='<?php echo $obj->name; ?>' <?php selected( $options['rp_field_location'], 1 ); ?>><?php echo $obj->labels->name; ?></option>
-	<?php
+	if (isset($options['rp_field_templates'])) {
+		$optionTemplates = $options['rp_field_templates'];
+	} else {
+		$optionTemplates = '';
 	}
 	?>
-	</select>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'home' ); ?> value='home' /> <?php echo __('Home / front-page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'blog' ); ?> value='blog' /> <?php echo __('Blog page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'archive' ); ?> value='archive' /> <?php echo __('Archive / category page for posts or custom post types', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'single' ); ?> value='single' /> <?php echo __('Single post / page / custom post type', 'progressbar' ); ?></p>
 	<?php
 }
-*/
+
+function rp_field_posttypes_render( ) {
+	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_templates'])) {
+		$optionTemplates = $options['rp_field_templates'];
+	} else {
+		$optionTemplates = '';
+	}
+	$post_types = get_post_types( 
+	array( 'public' => true ), 'objects' );
+	foreach ( $post_types as $type => $obj ) {
+		?>
+		<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, $obj->name ); ?> value='<?php $obj->name; ?>' /> <?php echo $obj->labels->name; ?></p>
+		<?php
+	}
+}
+
+	/* TODO… OR NOT ?
+	// List post formats
+	if ( current_theme_supports( 'post-formats' ) ) {
+    	$postFormats = get_theme_support( 'post-formats' );
+		foreach ( $postFormats[0] as $postFormat ) {
+			?>
+			<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, $postFormat ); ?> value='<?php echo $postFormat; ?>' /> <?php echo ucfirst($postFormat); ?></p>
+			<?php
+		}
+	}	
+	*/
+
 
 function rp_settings_section_callback(  ) { 
 
