@@ -59,7 +59,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_height', 
-		__( 'Height of the bar (pixels)', 'progressbar' ), 
+		__( 'Progressbar height (pixels)', 'progressbar' ), 
 		'rp_field_height_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
@@ -67,7 +67,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_color', 
-		__( 'Color of the bar', 'progressbar' ), 
+		__( 'Progressbar color', 'progressbar' ), 
 		'rp_field_color_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
@@ -75,7 +75,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_position', 
-		__( 'Position of the bar', 'progressbar' ), 
+		__( 'Progressbar position', 'progressbar' ), 
 		'rp_field_position_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
@@ -83,7 +83,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_custom_position', 
-		__( 'Target fixed HTML element class/id to stick the bar on', 'progressbar' ), 
+		__( 'Target fixed HTML element class/id to stick the bar on it’s bottom', 'progressbar' ), 
 		'rp_field_custom_position_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
