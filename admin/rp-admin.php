@@ -91,7 +91,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_templates', 
-		__( 'Select templates', 'progressbar' ), 
+		__( 'Select templates to apply progressbar', 'progressbar' ), 
 		'rp_field_templates_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
@@ -99,7 +99,7 @@ function rp_settings_init(  ) {
 
 	add_settings_field( 
 		'rp_field_posttypes', 
-		__( 'Select post types', 'progressbar' ), 
+		__( 'Select post types to apply progressbar', 'progressbar' ), 
 		'rp_field_posttypes_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
@@ -165,29 +165,37 @@ function rp_field_templates_render( ) {
 	$options = get_option( 'rp_settings' );
 	if (isset($options['rp_field_templates'])) {
 		$optionTemplates = $options['rp_field_templates'];
+		if (isset($optionTemplates['home'])) : $optionTemplatesHome = $optionTemplates['home']; else : $optionTemplatesHome = ''; endif;
+		if (isset($optionTemplates['blog'])) : $optionTemplatesBlog = $optionTemplates['blog']; else : $optionTemplatesBlog = ''; endif;
+		if (isset($optionTemplates['archive'])) : $optionTemplatesArchive = $optionTemplates['archive']; else : $optionTemplatesArchive = ''; endif;
+		if (isset($optionTemplates['single'])) : $optionTemplatesSingle = $optionTemplates['single']; else : $optionTemplatesSingle = ''; endif;
 	} else {
 		$optionTemplates = '';
+		$optionTemplatesHome = '';
+		$optionTemplatesBlog = '';
+		$optionTemplatesArchive = '';
+		$optionTemplatesSingle = '';
 	}
 	?>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'home' ); ?> value='home' /> <?php echo __('Home / front-page', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'blog' ); ?> value='blog' /> <?php echo __('Blog page (if used)', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'archive' ); ?> value='archive' /> <?php echo __('Archive / category page for posts or custom post types', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, 'single' ); ?> value='single' /> <?php echo __('Single post / page / custom post type', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][home]' <?php checked( $optionTemplatesHome == '1' ); ?> value='1' /> <?php echo __('Home / front-page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][blog]' <?php checked( $optionTemplatesBlog == '1' ); ?> value='1' /> <?php echo __('Blog page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][archive]' <?php checked( $optionTemplatesArchive == '1' ); ?> value='1' /> <?php echo __('Archives and categories /taxonomies for posts or custom post types', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][single]' <?php checked( $optionTemplatesSingle == '1' ); ?> value='1' /> <?php echo __('Single post / page / custom post type (if you need to exclude some post types, do it below)', 'progressbar' ); ?></p>
 	<?php
 }
 
 function rp_field_posttypes_render( ) {
 	$options = get_option( 'rp_settings' );
-	if (isset($options['rp_field_templates'])) {
-		$optionTemplates = $options['rp_field_templates'];
+	if (isset($options['rp_field_posttypes'])) {
+		$optionPostTypes = $options['rp_field_posttypes'];
 	} else {
-		$optionTemplates = '';
+		$optionPostTypes = '';
 	}
 	$post_types = get_post_types( 
 	array( 'public' => true ), 'objects' );
 	foreach ( $post_types as $type => $obj ) {
 		?>
-		<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, $obj->name ); ?> value='<?php $obj->name; ?>' /> <?php echo $obj->labels->name; ?></p>
+		<p><input type='checkbox' name='rp_settings[rp_field_posttypes]' <?php checked( $optionPostTypes, $obj->name ); ?> value='<?php $obj->name; ?>' /> <?php echo $obj->labels->name; ?></p>
 		<?php
 	}
 }

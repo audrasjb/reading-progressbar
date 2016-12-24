@@ -35,16 +35,37 @@
 			$rpColor = $rpSettings['rp_field_color'];
 			$rpPosition = $rpSettings['rp_field_position'];
 			$rpCustomPosition = $rpSettings['rp_field_custom_position'];
-		} else {
-			$rpHeight = '10';
-			$rpColor = '#aaaaaa';
-			$rpPosition = 'top';
-			$rpCustomPosition = '';
+			if ( isset( $rpSettings['rp_field_templates'] ) ) { 
+				$optionTemplates = $rpSettings['rp_field_templates'];
+				if ( isset($optionTemplates['home']) && (is_home() && is_front_page() || is_front_page()) ) {
+					echo '<progress class="readingProgressbar" 
+						data-color="' . $rpColor . '" 
+						data-height="' . $rpHeight . '" 
+						data-position="'. $rpPosition .'" 
+						data-custom-position="'. $rpCustomPosition .'" 
+						value="0"></progress>';
+				} elseif ( isset($optionTemplates['blog']) && (is_home() && !is_front_page()) ) {
+					echo '<progress class="readingProgressbar" 
+						data-color="' . $rpColor . '" 
+						data-height="' . $rpHeight . '" 
+						data-position="'. $rpPosition .'" 
+						data-custom-position="'. $rpCustomPosition .'" 
+						value="0"></progress>';
+				} elseif ( isset($optionTemplates['archive']) && (is_archive()) ) {
+					echo '<progress class="readingProgressbar" 
+						data-color="' . $rpColor . '" 
+						data-height="' . $rpHeight . '" 
+						data-position="'. $rpPosition .'" 
+						data-custom-position="'. $rpCustomPosition .'" 
+						value="0"></progress>';
+				} elseif ( isset($optionTemplates['single']) && (is_singular() && !is_front_page()) ) {
+					echo '<progress class="readingProgressbar" 
+						data-color="' . $rpColor . '" 
+						data-height="' . $rpHeight . '" 
+						data-position="'. $rpPosition .'" 
+						data-custom-position="'. $rpCustomPosition .'" 
+						value="0"></progress>';
+				} 
+			}
 		}
-	    echo '<progress class="readingProgressbar" 
-	    		data-color="' . $rpColor . '" 
-				data-height="' . $rpHeight . '" 
-				data-position="'. $rpPosition .'" 
-				data-custom-position="'. $rpCustomPosition .'" 
-			value="0"></progress>';
 	}
