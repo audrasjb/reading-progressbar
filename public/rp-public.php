@@ -59,12 +59,16 @@
 						data-custom-position="'. $rpCustomPosition .'" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['single']) && (is_singular() && !is_front_page()) ) {
-					echo '<progress class="readingProgressbar" 
-						data-color="' . $rpColor . '" 
-						data-height="' . $rpHeight . '" 
-						data-position="'. $rpPosition .'" 
-						data-custom-position="'. $rpCustomPosition .'" 
-						value="0"></progress>';
+					$optionPostTypes = $rpSettings['rp_field_posttypes'];
+					$currentPostType = get_post_type();
+					if (isset($optionPostTypes[$currentPostType])) {
+						echo '<progress class="readingProgressbar" 
+							data-color="' . $rpColor . '" 
+							data-height="' . $rpHeight . '" 
+							data-position="'. $rpPosition .'" 
+							data-custom-position="'. $rpCustomPosition .'" 
+							value="0"></progress>';
+					} 
 				} 
 			}
 		}

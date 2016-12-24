@@ -192,17 +192,23 @@ function rp_field_templates_render( ) {
 
 function rp_field_posttypes_render( ) {
 	$options = get_option( 'rp_settings' );
+	$optionNamePostType = '';
 	if (isset($options['rp_field_posttypes'])) {
 		$optionPostTypes = $options['rp_field_posttypes'];
+		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		foreach ( $post_types as $type => $obj ) {
+			if (isset($optionPostTypes[$obj->name])) : $optionNamePostType = $optionPostTypes[$obj->name]; else : $optionNamePostType = ''; endif;
+			?>
+			<p><input type='checkbox' name='rp_settings[rp_field_posttypes][<?php echo $obj->name; ?>]' <?php checked( $optionNamePostType == '1' ); ?> value='1' /> <?php echo $obj->labels->name; ?></p>
+			<?php
+		}
 	} else {
-		$optionPostTypes = '';
-	}
-	$post_types = get_post_types( 
-	array( 'public' => true ), 'objects' );
-	foreach ( $post_types as $type => $obj ) {
-		?>
-		<p><input type='checkbox' name='rp_settings[rp_field_posttypes][<?php echo $obj->name; ?>]' <?php checked( $optionPostTypes == '1' ); ?> value='<?php $obj->name; ?>' /> <?php echo $obj->labels->name; ?></p>
-		<?php
+		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		foreach ( $post_types as $type => $obj ) {
+			?>
+			<p><input type='checkbox' name='rp_settings[rp_field_posttypes][<?php echo $obj->name; ?>]' value='1' /> <?php echo $obj->labels->name; ?></p>
+			<?php
+		}
 	}
 }
 
