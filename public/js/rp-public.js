@@ -3,17 +3,28 @@
 	
 	// Il faut que le DOM soit déjà opé
 	$(function() { 
-		
+
 		// Calcul de la valeur max de la progressbar
 		var winHeight = $(window).height(),
 		docHeight = $(document).height();
 		var max = docHeight - winHeight;
 		$('.readingProgressbar').attr('max', max);
 		
-		// Styles
 		var progressColor = $('.readingProgressbar').attr('data-color');
 		var progressHeight = $('.readingProgressbar').attr('data-height');
 		var progressPosition = $('.readingProgressbar').attr('data-position');
+		var progressCustomPosition = $('.readingProgressbar').attr('data-custom-position');
+		var progressFixedOrAbsolute = 'fixed';
+
+		// Custom position
+		if (progressPosition == 'custom') {
+			console.log(progressCustomPosition);
+			$('.readingProgressbar').appendTo(progressCustomPosition);
+			progressPosition = 'bottom';
+			progressFixedOrAbsolute = 'absolute';
+		}
+
+		// Styles
 		if ( progressPosition == 'top' ) {
 			var progressTop = '0';
 			var progressBottom = 'auto';
@@ -27,6 +38,7 @@
 			'height' :  progressHeight + 'px',
 			'top' : progressTop,
 			'bottom' : progressBottom,
+			'position' : progressFixedOrAbsolute
 		});
 		
 		$('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressColor + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressColor + ' }</style>')

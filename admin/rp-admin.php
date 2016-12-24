@@ -41,7 +41,7 @@ add_action( 'admin_init', 'rp_settings_init' );
 
 function rp_add_admin_menu(  ) { 
 
-	add_options_page( 'Reading progressbar options', 'Progressbar', 'manage_options', 'reading-progressbar', 'rp_options_page' );
+	add_options_page( 'Reading progressbar options', 'Reading progress', 'manage_options', 'reading-progressbar', 'rp_options_page' );
 
 }
 
@@ -80,6 +80,15 @@ function rp_settings_init(  ) {
 		'pluginPage', 
 		'rp_pluginPage_section' 
 	);
+
+	add_settings_field( 
+		'rp_field_custom_position', 
+		__( 'Target fixed HTML element class/id to stick the bar on', 'progressbar' ), 
+		'rp_field_custom_position_render', 
+		'pluginPage', 
+		'rp_pluginPage_section' 
+	);
+
 /*
 	add_settings_field( 
 		'rp_field_location', 
@@ -95,7 +104,7 @@ function rp_settings_init(  ) {
 function rp_field_height_render(  ) { 
 	$options = get_option( 'rp_settings' );
 	?>
-	<input type='number' name='rp_settings[rp_field_height]' value='<?php echo $options['rp_field_height']; ?>'>
+	<input type='number' name='rp_settings[rp_field_height]' value='<?php if ($options['rp_field_height']) : echo $options['rp_field_height']; endif; ?>'>
 	<?php
 }
 
@@ -103,7 +112,7 @@ function rp_field_height_render(  ) {
 function rp_field_color_render(  ) { 
 	$options = get_option( 'rp_settings' );
 	?>
-	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_color]' value='<?php echo $options['rp_field_color']; ?>'>
+	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_color]' value='<?php if ($options['rp_field_color']) : echo $options['rp_field_color']; endif; ?>'>
 	<?php
 }
 
@@ -112,10 +121,18 @@ function rp_field_position_render(  ) {
 	$options = get_option( 'rp_settings' );
 	?>
 	<select name='rp_settings[rp_field_position]'>
-		<option value='top' <?php selected( $options['rp_field_position'], 1 ); ?>>Top</option>
-		<option value='bottom' <?php selected( $options['rp_field_position'], 1 ); ?>>Bottom</option>
+		<option value='top' <?php selected( $options['rp_field_position'], 'top' ); ?>>Top</option>
+		<option value='bottom' <?php selected( $options['rp_field_position'], 'bottom' ); ?>>Bottom</option>
+		<option value='custom' <?php selected( $options['rp_field_position'], 'custom' ); ?>>Custom</option>
 	</select>
 <?php
+}
+
+function rp_field_custom_position_render(  ) { 
+	$options = get_option( 'rp_settings' );
+	?>
+	<input type='text' name='rp_settings[rp_field_custom_position]' value='<?php if ($options['rp_field_custom_position']) : echo $options['rp_field_custom_position']; endif; ?>'>
+	<?php
 }
 
 /*

@@ -34,14 +34,17 @@
 			$rpHeight = $rpSettings['rp_field_height'];
 			$rpColor = $rpSettings['rp_field_color'];
 			$rpPosition = $rpSettings['rp_field_position'];
+			$rpCustomPosition = $rpSettings['rp_field_custom_position'];
 		} else {
 			$rpHeight = '10';
 			$rpColor = '#aaaaaa';
 			$rpPosition = 'top';
+			$rpCustomPosition = '';
 		}
 	    echo '<progress class="readingProgressbar" 
 	    		data-color="' . $rpColor . '" 
 				data-height="' . $rpHeight . '" 
 				data-position="'. $rpPosition .'" 
+				data-custom-position="'. $rpCustomPosition .'" 
 			value="0"></progress>';
 	}
