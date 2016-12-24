@@ -146,6 +146,7 @@ function rp_field_position_render(  ) {
 		<option value='bottom' <?php selected( $optionPosition, 'bottom' ); ?>>Bottom</option>
 		<option value='custom' <?php selected( $optionPosition, 'custom' ); ?>>Custom</option>
 	</select>
+	<p class="description"><?php echo __('Note: custom position can’t work with all theme and need a fixed element to stick the progressbar. <br />It may need some custom CSS to work fine.', 'progressbar'); ?></p>
 <?php
 }
 
@@ -158,6 +159,7 @@ function rp_field_custom_position_render(  ) {
 	}
 	?>
 	<input type='text' name='rp_settings[rp_field_custom_position]' value='<?php echo $optionCustomPosition; ?>'>
+	<p class="description"><?php echo __('Note: use it only if you have selected <b>custom</b> position before, instead of <b>top</b> or <b>bottom</b>', 'progressbar'); ?></p>
 	<?php
 }
 
@@ -177,10 +179,14 @@ function rp_field_templates_render( ) {
 		$optionTemplatesSingle = '';
 	}
 	?>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates][home]' <?php checked( $optionTemplatesHome == '1' ); ?> value='1' /> <?php echo __('Home / front-page', 'progressbar' ); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][home]' <?php checked( $optionTemplatesHome == '1' ); ?> value='1' /> <?php echo __('Front-page', 'progressbar' ); ?></p>
+	<p class="description"><?php echo __('(as set in Settings &gt; Reading)', 'progressbar'); ?></p>
 	<p><input type='checkbox' name='rp_settings[rp_field_templates][blog]' <?php checked( $optionTemplatesBlog == '1' ); ?> value='1' /> <?php echo __('Blog page', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates][archive]' <?php checked( $optionTemplatesArchive == '1' ); ?> value='1' /> <?php echo __('Archives and categories / taxonomies for posts or custom post types (you need to include concerned post types below)', 'progressbar' ); ?></p>
-	<p><input type='checkbox' name='rp_settings[rp_field_templates][single]' <?php checked( $optionTemplatesSingle == '1' ); ?> value='1' /> <?php echo __('Single post / page / custom post type (you need to include concerned post types below)', 'progressbar' ); ?></p>
+	<p class="description"><?php echo __('(as set in Settings &gt; Reading)', 'progressbar'); ?></p>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][archive]' <?php checked( $optionTemplatesArchive == '1' ); ?> value='1' /> <?php echo __('Archives and categories / taxonomies for posts or custom post types', 'progressbar' ); ?></p>
+	<p class="description"><?php echo __('(you need to include concerned post types below)', 'progressbar' ); ?>
+	<p><input type='checkbox' name='rp_settings[rp_field_templates][single]' <?php checked( $optionTemplatesSingle == '1' ); ?> value='1' /> <?php echo __('Single post / page / custom post type', 'progressbar'); ?></p>
+	<p class="description"><?php echo __('(you need to include concerned post types below)', 'progressbar' ); ?>
 	<?php
 }
 

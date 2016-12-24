@@ -40,7 +40,7 @@
 			'bottom' : progressBottom,
 			'position' : progressFixedOrAbsolute
 		});
-		
+
 		$('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressColor + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressColor + ' }</style>')
 		.appendTo('head');
 
