@@ -23,7 +23,7 @@ Get a reading position indicator as a progress bar and show it where you want: t
 == Screenshots ==
 
 1. Plugin option page.
-2. Reading Progressbar in custom fixed position on Twenty Sixteen Theme.
+2. Reading Progressbar in custom fixed position on Twenty Seventeen Theme.
 
 == Changelog ==
 
