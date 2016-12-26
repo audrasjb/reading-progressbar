@@ -31,6 +31,7 @@
 	}	
 	
 /**
+ *
  * Plugin options in reading section
  *
  */
@@ -165,7 +166,7 @@ function rp_field_position_render(  ) {
 		<option value='bottom' <?php selected( $optionPosition, 'bottom' ); ?>>Bottom</option>
 		<option value='custom' <?php selected( $optionPosition, 'custom' ); ?>>Custom</option>
 	</select>
-	<p class="description"><?php echo __('Note: custom position can’t work with all theme and need a fixed element to stick the progressbar. <br />It may need some custom CSS to work fine.', 'progressbar'); ?></p>
+	<p class="description"><?php echo __('Note: custom position is not ok with all WordPress themes. It needs a fixed element to stick the progressbar on it. <br />You may need some custom CSS to put the progressbar on the right place as it uses absolute positionning.', 'progressbar'); ?></p>
 <?php
 }
 
@@ -266,4 +267,3 @@ function rp_options_page(  ) {
 	<?php
 
 }
-
