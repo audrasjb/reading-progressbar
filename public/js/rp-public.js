@@ -10,7 +10,8 @@
 		var max = docHeight - winHeight;
 		$('.readingProgressbar').attr('max', max);
 		
-		var progressColor = $('.readingProgressbar').attr('data-color');
+		var progressForeground = $('.readingProgressbar').attr('data-foreground');
+		var progressBackground = $('.readingProgressbar').attr('data-background');
 		var progressHeight = $('.readingProgressbar').attr('data-height');
 		var progressPosition = $('.readingProgressbar').attr('data-position');
 		var progressCustomPosition = $('.readingProgressbar').attr('data-custom-position');
@@ -34,14 +35,15 @@
 		}
 
 		$('.readingProgressbar').css({
-			'color' :  progressColor,
+			'background-color' : progressBackground,
+			'color' :  progressForeground,
 			'height' :  progressHeight + 'px',
 			'top' : progressTop,
 			'bottom' : progressBottom,
 			'position' : progressFixedOrAbsolute
 		});
 
-		$('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressColor + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressColor + ' }</style>')
+		$('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressForeground + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressForeground + ' }</style>')
 		.appendTo('head');
 
 		// Valeur initiale (si on arrive via une ancre ou autre…)

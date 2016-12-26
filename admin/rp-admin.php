@@ -66,9 +66,17 @@ function rp_settings_init(  ) {
 	);
 
 	add_settings_field( 
-		'rp_field_color', 
-		__( 'Progressbar color', 'progressbar' ), 
-		'rp_field_color_render', 
+		'rp_field_fg_color', 
+		__( 'Foreground color', 'progressbar' ), 
+		'rp_field_fg_color_render', 
+		'pluginPage', 
+		'rp_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'rp_field_bg_color', 
+		__( 'Background color', 'progressbar' ), 
+		'rp_field_bg_color_render', 
 		'pluginPage', 
 		'rp_pluginPage_section' 
 	);
@@ -120,18 +128,29 @@ function rp_field_height_render(  ) {
 }
 
 
-function rp_field_color_render(  ) { 
+function rp_field_fg_color_render(  ) { 
 	$options = get_option( 'rp_settings' );
-	if (isset($options['rp_field_color'])) {
-		$optionColor = $options['rp_field_color'];
+	if (isset($options['rp_field_fg_color'])) {
+		$optionForegroundColor = $options['rp_field_fg_color'];
 	} else {
-		$optionColor = '';		
+		$optionForegroundColor = '';		
 	}
 	?>
-	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_color]' value='<?php echo $optionColor; ?>'>
+	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_fg_color]' value='<?php echo $optionForegroundColor; ?>'>
 	<?php
 }
 
+function rp_field_bg_color_render(  ) { 
+	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_bg_color'])) {
+		$optionBackgroundColor = $options['rp_field_bg_color'];
+	} else {
+		$optionBackgroundColor = '';		
+	}
+	?>
+	<input type='text' class='rp-colorpicker' name='rp_settings[rp_field_bg_color]' value='<?php echo $optionBackgroundColor; ?>'>
+	<?php
+}
 
 function rp_field_position_render(  ) { 
 	$options = get_option( 'rp_settings' );

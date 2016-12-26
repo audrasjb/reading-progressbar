@@ -32,41 +32,46 @@
 		if ( get_option( 'rp_settings' ) ) {
 			$rpSettings = get_option( 'rp_settings' );
 			$rpHeight = $rpSettings['rp_field_height'];
-			$rpColor = $rpSettings['rp_field_color'];
+			$rpForegroundColor = $rpSettings['rp_field_fg_color'];
+			$rpBackgroundColor = $rpSettings['rp_field_bg_color'];
 			$rpPosition = $rpSettings['rp_field_position'];
 			$rpCustomPosition = $rpSettings['rp_field_custom_position'];
 			if ( isset( $rpSettings['rp_field_templates'] ) ) { 
 				$optionTemplates = $rpSettings['rp_field_templates'];
 				if ( isset($optionTemplates['home']) && (is_home() && is_front_page() || is_front_page()) ) {
 					echo '<progress class="readingProgressbar" 
-						data-color="' . $rpColor . '" 
 						data-height="' . $rpHeight . '" 
 						data-position="'. $rpPosition .'" 
 						data-custom-position="'. $rpCustomPosition .'" 
+						data-foreground="' . $rpForegroundColor . '" 
+						data-background="' . $rpBackgroundColor . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['blog']) && (is_home() && !is_front_page()) ) {
 					echo '<progress class="readingProgressbar" 
-						data-color="' . $rpColor . '" 
 						data-height="' . $rpHeight . '" 
 						data-position="'. $rpPosition .'" 
 						data-custom-position="'. $rpCustomPosition .'" 
+						data-foreground="' . $rpForegroundColor . '" 
+						data-background="' . $rpBackgroundColor . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['archive']) && (is_archive()) ) {
 					echo '<progress class="readingProgressbar" 
-						data-color="' . $rpColor . '" 
 						data-height="' . $rpHeight . '" 
 						data-position="'. $rpPosition .'" 
 						data-custom-position="'. $rpCustomPosition .'" 
+						data-foreground="' . $rpForegroundColor . '" 
+						data-background="' . $rpBackgroundColor . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['single']) && (is_singular() && !is_front_page()) ) {
 					$optionPostTypes = $rpSettings['rp_field_posttypes'];
 					$currentPostType = get_post_type();
 					if (isset($optionPostTypes[$currentPostType])) {
 						echo '<progress class="readingProgressbar" 
-							data-color="' . $rpColor . '" 
 							data-height="' . $rpHeight . '" 
 							data-position="'. $rpPosition .'" 
 							data-custom-position="'. $rpCustomPosition .'" 
+							data-foreground="' . $rpForegroundColor . '" 
+							data-background="' . $rpBackgroundColor . '" 
 							value="0"></progress>';
 					} 
 				} 
