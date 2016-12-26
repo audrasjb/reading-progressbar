@@ -32,9 +32,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Admin
  */
 if (is_admin()) {
- require_once plugin_dir_path( dirname( __FILE__ ) ) . '/reading-progressbar/admin/rp-admin.php';
+ require_once plugin_dir_path( __FILE__ ) . '/admin/rp-admin.php';
 }
 /**
  * Public
  */
-require_once plugin_dir_path( dirname( __FILE__ ) ) . '/reading-progressbar/public/rp-public.php';
+require_once plugin_dir_path( __FILE__ ) . '/public/rp-public.php';
