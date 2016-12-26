@@ -1,6 +1,6 @@
 === Reading progressbar ===
 Contributors: audrasjb
-Tags: reading, progressbar, progress, scroll, read, bar, position, indicator, template
+Tags: reading, progressbar, progress, scroll, read, bar, position, indicator, template, lecture, barre, suivi
 Requires at least: 4.5
 Tested up to: 4.7
 Stable tag: 1.0

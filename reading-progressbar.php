@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @link              http://jeanbaptisteaudras.com/wstjb-bouton-justifier-texte-wordpress/
+ * @link              http://jeanbaptisteaudras.com/portfolio/wordpress-reading-progressbar-indicator-plugin/
  * @since             1.0
  * @package           Reading progressbar
  *
  * @wordpress-plugin
  * Plugin Name:       Reading progressbar
- * Plugin URI:        http://jeanbaptisteaudras.com
+ * Plugin URI:        http://jeanbaptisteaudras.com/portfolio/wordpress-reading-progressbar-indicator-plugin/
  * Description:       Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
  * Version:           1.0
  * Author:            Jean-Baptiste Audras, project manager @ Whodunit

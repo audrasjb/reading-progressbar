@@ -171,9 +171,9 @@ function rp_field_position_render(  ) {
 	}
 	?>
 	<select name='rp_settings[rp_field_position]'>
-		<option value='top' <?php selected( $optionPosition, 'top' ); ?>>Top</option>
-		<option value='bottom' <?php selected( $optionPosition, 'bottom' ); ?>>Bottom</option>
-		<option value='custom' <?php selected( $optionPosition, 'custom' ); ?>>Custom</option>
+		<option value='top' <?php selected( $optionPosition, 'top' ); ?>><?php echo __('Top', 'progressbar'); ?></option>
+		<option value='bottom' <?php selected( $optionPosition, 'bottom' ); ?>><?php echo __('Bottom', 'progressbar'); ?></option>
+		<option value='custom' <?php selected( $optionPosition, 'custom' ); ?>><?php echo __('Custom', 'progressbar'); ?></option>
 	</select>
 	<p class="description"><?php echo __('Note: custom position is not ok with all WordPress themes. It needs a fixed element to stick the progressbar on it. <br />You may need some custom CSS to put the progressbar on the right place as it uses absolute positionning.', 'progressbar'); ?></p>
 <?php
