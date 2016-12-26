@@ -1,27 +1,29 @@
 === Reading progressbar ===
 Contributors: audrasjb
-Tags: reading, progressbar
-Requires at least: 4.6
+Tags: reading, progressbar, progress, scroll, read, bar, position, indicator, template
+Requires at least: 4.5
 Tested up to: 4.7
 Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-My description
+Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
 
 == Description ==
 
-Some text
+Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
 
 **Credits** : [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
 
 == Installation ==
 
 1. Install the plugin and activate.
+2. Go to Settings &gt; Reading Progressbar to manage plugin’s options.
 
 == Screenshots ==
 
-1. Nice screenshot
+1. Plugin option page.
+2. Reading Progressbar in custom fixed position on Twenty Sixteen Theme.
 
 == Changelog ==
 

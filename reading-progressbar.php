@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       Reading progressbar
  * Plugin URI:        http://jeanbaptisteaudras.com
- * Description:       Reading progressbar WIP
+ * Description:       Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
  * Version:           1.0
  * Author:            Jean-Baptiste Audras, project manager @ Whodunit
  * Author URI:        http://jeanbaptisteaudras.com
