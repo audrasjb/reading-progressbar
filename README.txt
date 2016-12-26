@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
+A reading position indicator that you can use where you want: top, bottom or custom position in differents templates or post types.
 
 == Description ==
 
