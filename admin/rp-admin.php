@@ -42,7 +42,7 @@ add_action( 'admin_init', 'rp_settings_init' );
 
 function rp_add_admin_menu(  ) { 
 
-	add_options_page( 'Reading progressbar options', 'Reading progress', 'manage_options', 'reading-progressbar', 'rp_options_page' );
+	add_options_page( 'Reading progressbar options', 'Reading progressbar', 'manage_options', 'reading-progressbar', 'rp_options_page' );
 
 }
 
@@ -113,6 +113,15 @@ function rp_settings_init(  ) {
 		'pluginPage', 
 		'rp_pluginPage_section' 
 	);
+
+/*	add_settings_field( 
+		'rp_field_mobile', 
+		__( 'Display progressbar on mobile devices?', 'progressbar' ), 
+		'rp_field_mobile_render', 
+		'pluginPage', 
+		'rp_pluginPage_section' 
+	);*/
+
 }
 
 
@@ -232,17 +241,20 @@ function rp_field_posttypes_render( ) {
 	}
 }
 
-	/* TODO… OR NOT ?
-	// List post formats
-	if ( current_theme_supports( 'post-formats' ) ) {
-    	$postFormats = get_theme_support( 'post-formats' );
-		foreach ( $postFormats[0] as $postFormat ) {
-			?>
-			<p><input type='checkbox' name='rp_settings[rp_field_templates]' <?php checked( $optionTemplates, $postFormat ); ?> value='<?php echo $postFormat; ?>' /> <?php echo ucfirst($postFormat); ?></p>
-			<?php
-		}
-	}	
-	*/
+
+/* preparing mobile support
+function rp_field_mobile_render(  ) { 
+	$options = get_option( 'rp_settings' );
+	if (isset($options['rp_field_mobile'])) {
+		$optionMobile = $options['rp_field_mobile'];
+	} else {
+		$optionMobile = '';		
+	}
+	?>
+	<p><input type='checkbox' name='rp_settings[rp_field_mobile]' <?php checked( $optionMobile == '1' ); ?> value='1' /> Yes, please</p>
+<?php
+}
+*/
 
 
 function rp_settings_section_callback(  ) { 

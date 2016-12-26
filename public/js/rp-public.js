@@ -49,13 +49,11 @@
 		// Valeur initiale (si on arrive via une ancre ou autre…)
 		var value = $(window).scrollTop();
 		$('.readingProgressbar').attr('value', value);
-
 		// Calcul et maj dynamique de la valeur lors du scroll
 		$(document).on('scroll', function() {
 			value = $(window).scrollTop();
 			$('.readingProgressbar').attr('value', value);
 		});
-		
 	});
 
 })( jQuery );

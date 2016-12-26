@@ -45,6 +45,7 @@
 						data-custom-position="'. $rpCustomPosition .'" 
 						data-foreground="' . $rpForegroundColor . '" 
 						data-background="' . $rpBackgroundColor . '" 
+						data-mobile="' . $rpMobile . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['blog']) && (is_home() && !is_front_page()) ) {
 					echo '<progress class="readingProgressbar" 
@@ -53,6 +54,7 @@
 						data-custom-position="'. $rpCustomPosition .'" 
 						data-foreground="' . $rpForegroundColor . '" 
 						data-background="' . $rpBackgroundColor . '" 
+						data-mobile="' . $rpMobile . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['archive']) && (is_archive()) ) {
 					echo '<progress class="readingProgressbar" 
@@ -61,6 +63,7 @@
 						data-custom-position="'. $rpCustomPosition .'" 
 						data-foreground="' . $rpForegroundColor . '" 
 						data-background="' . $rpBackgroundColor . '" 
+						data-mobile="' . $rpMobile . '" 
 						value="0"></progress>';
 				} elseif ( isset($optionTemplates['single']) && (is_singular() && !is_front_page()) ) {
 					$optionPostTypes = $rpSettings['rp_field_posttypes'];
@@ -72,6 +75,7 @@
 							data-custom-position="'. $rpCustomPosition .'" 
 							data-foreground="' . $rpForegroundColor . '" 
 							data-background="' . $rpBackgroundColor . '" 
+							data-mobile="' . $rpMobile . '" 
 							value="0"></progress>';
 					} 
 				} 
