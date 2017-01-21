@@ -13,7 +13,9 @@ A reading position indicator that you can use where you want: top, bottom or cus
 
 Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
 
-**Credits** : [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
+**Credits** : 
+[Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
+German translation: thanks [Josef Seidl](https://profiles.wordpress.org/blogitsolutions/ "Josef Seidl")
 
 == Installation ==
 
