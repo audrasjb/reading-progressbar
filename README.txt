@@ -33,7 +33,7 @@ Options:
 
 *   German translation by [Josef Seidl](http://www.blog-it-solutions.de/mail "Josef Seidl") <3
 
-Add your own language pack or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited here :)
+Add your own language pack on GlotPress or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited here :)
 
 == Installation ==
 
