@@ -2,8 +2,8 @@
 Contributors: audrasjb,whodunitagency
 Tags: reading, progressbar, progress, scroll, read, bar, position, indicator, template, lecture, barre, suivi
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 1.1
+Tested up to: 4.7.1
+Stable tag: 1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,8 +16,9 @@ Get a reading position indicator as a progress bar and show it where you want: t
 **Credits** 
 [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
 
-**Contribute** 
-Add your own language pack or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited.
+**Contributors**
+– German translation by [Josef Seidl](http://www.blog-it-solutions.de/mail "Josef Seidl") <3
+Add your own language pack or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited here :)
 
 == Installation ==
 
@@ -31,8 +32,11 @@ Add your own language pack or do pull requests on [Github](https://github.com/au
 
 == Changelog ==
 
-= 1.0 =
-* Plugin internationalization.
+= 1.2 =
+* Add german translation and fixed a JS bug while loading the progressbar value. We need to load the whole page before display the bar :)
+
+= 1.1 =
+* i18n ready.
 
 = 1.0 =
 * Plugin initial commit. Works fine :)
