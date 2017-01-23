@@ -13,13 +13,25 @@ A reading position indicator that you can use where you want: top, bottom or cus
 
 Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
 
+It uses `<progress>` HTML element and few lines of javascript.
+
+Options: 
+
+*   Progress bar’s height
+*   Foreground color
+*   Background color
+*   Position (top, bottom, custom)
+*   Class/ID of HTML element to fix the bar (if custom position selected)
+*   Page templates
+*   Post types (natives or custom)
+
 **Credits** : 
 
-– [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
+*   [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
 
 **Contributors** :
 
-– German translation by [Josef Seidl](http://www.blog-it-solutions.de/mail "Josef Seidl") <3
+*   German translation by [Josef Seidl](http://www.blog-it-solutions.de/mail "Josef Seidl") <3
 
 Add your own language pack or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited here :)
 
