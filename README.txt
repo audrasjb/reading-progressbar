@@ -13,17 +13,27 @@ A reading position indicator that you can use where you want: top, bottom or cus
 
 Get a reading position indicator as a progress bar and show it where you want: top, bottom or custom position in differents templates or post types.
 
-**Credits** 
-[Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
+**Credits** : 
 
-**Contributors**
+– [Jean-Baptiste Audras](http://jeanbaptisteaudras.com/ "Jean-Baptiste Audras"), project manager at [Whodunit](http://www.whodunit.fr/ "Whodunit WordPress Agency") and WordPress developer. @audrasjb on [Twitter](https://twitter.com/audrasjb "@audrasjb on Twitter") or [Github](https://github.com/audrasjb "@audrasjb on Github").
+
+**Contributors** :
+
 – German translation by [Josef Seidl](http://www.blog-it-solutions.de/mail "Josef Seidl") <3
+
 Add your own language pack or do pull requests on [Github](https://github.com/audrasjb "Plugin repo on Github"). Contributors will be credited here :)
 
 == Installation ==
 
 1. Install the plugin and activate.
 2. Go to Settings &gt; Reading Progressbar to manage plugin’s options.
+
+== Frequently Asked Questions ==
+
+= Does it works on WordPress network/multisite? =
+
+Sorry but this plugin doesn’t supports network/multisite installation in it's free/public version. 
+It will be fixed on version 2.0. Contact me if you want to help or ask for more informations.
 
 == Screenshots ==
 
